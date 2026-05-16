@@ -1,0 +1,28 @@
+@baseUrl = https://one3-sprint-mission-be-1fih.onrender.com
+
+###
+GET {{baseUrl}}/products?sort=recent
+
+###
+GET {{baseUrl}}/products/69fbf59bab51561dac9ba2bf
+
+###
+POST {{baseUrl}}/products/
+Content-Type: application/json
+
+{
+  "name": "무선헤드셋",
+  "description": "검색기능테스트입니다입니다",
+  "price": 90000
+}
+
+###
+PATCH {{baseUrl}}/products/69fc1f69d5e8ab5e8fa732e6
+Content-Type: application/json
+
+{
+  "price": 10000
+}
+
+###
+DELETE {{baseUrl}}/products/69fc1f59d5e8ab5e8fa732e5
