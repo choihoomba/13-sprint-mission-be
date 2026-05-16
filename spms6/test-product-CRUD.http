@@ -1,45 +1,45 @@
-@BASE_URL = http://localhost:3000 
+@BASE_URL = https://one3-sprint-mission-be-1.onrender.com 
 
 ### ===== GET / =====
 
 ### 정상 - 기본
-GET http://localhost:3000/products
+GET https://one3-sprint-mission-be-1.onrender.com/products
 
 ### 정상 - 쿼리 전체
-GET http://localhost:3000/products?keyword=테스트&page=1&limit=5&sort=recent
+GET https://one3-sprint-mission-be-1.onrender.com/products?keyword=테스트&page=1&limit=5&sort=recent
 
 ### 에러 - page 문자열
-GET http://localhost:3000/products?page=abc
+GET https://one3-sprint-mission-be-1.onrender.com/products?page=abc
 
 ### 에러 - page 음수
-GET http://localhost:3000/products?page=-1
+GET https://one3-sprint-mission-be-1.onrender.com/products?page=-1
 
 ### 에러 - limit 소수
-GET http://localhost:3000/products?limit=1.5
+GET https://one3-sprint-mission-be-1.onrender.com/products?limit=1.5
 
 ### 에러 - sort 잘못된 값
-GET http://localhost:3000/products?sort=popular
+GET https://one3-sprint-mission-be-1.onrender.com/products?sort=popular
 
 
 ### ===== GET /:id =====
 
 ### 정상
-GET http://localhost:3000/products/62
+GET https://one3-sprint-mission-be-1.onrender.com/products/62
 
 ### 에러 - 문자열 id
-GET http://localhost:3000/products/abc
+GET https://one3-sprint-mission-be-1.onrender.com/products/abc
 
 ### 에러 - 음수 id
-GET http://localhost:3000/products/-1
+GET https://one3-sprint-mission-be-1.onrender.com/products/-1
 
 ### 에러 - 존재하지 않는 id
-GET http://localhost:3000/products/99999
+GET https://one3-sprint-mission-be-1.onrender.com/products/99999
 
 
 ### ===== POST / =====
 
 ### 정상 - tags 포함
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -50,7 +50,7 @@ Content-Type: application/json
 }
 
 ### 정상 - tags 없음
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -60,10 +60,10 @@ Content-Type: application/json
 }
 
 ### 에러 - body 없음
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 
 ### 에러 - name 누락
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -72,7 +72,7 @@ Content-Type: application/json
 }
 
 ### 에러 - name 10자 초과
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -82,7 +82,7 @@ Content-Type: application/json
 }
 
 ### 에러 - description 10자 미만
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -92,7 +92,7 @@ Content-Type: application/json
 }
 
 ### 에러 - price 음수
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -102,7 +102,7 @@ Content-Type: application/json
 }
 
 ### 에러 - price 소수
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -112,7 +112,7 @@ Content-Type: application/json
 }
 
 ### 에러 - price 문자열 (coerce 불가)
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -122,7 +122,7 @@ Content-Type: application/json
 }
 
 ### 에러 - tag 5자 초과
-POST http://localhost:3000/products
+POST https://one3-sprint-mission-be-1.onrender.com/products
 Content-Type: application/json
 
 {
@@ -136,7 +136,7 @@ Content-Type: application/json
 ### ===== PATCH /:id =====
 
 ### 정상 - 부분 수정
-PATCH http://localhost:3000/products/63
+PATCH https://one3-sprint-mission-be-1.onrender.com/products/63
 Content-Type: application/json
 
 {
@@ -144,7 +144,7 @@ Content-Type: application/json
 }
 
 ### 정상 - tags 교체
-PATCH http://localhost:3000/products/63
+PATCH https://one3-sprint-mission-be-1.onrender.com/products/63
 Content-Type: application/json
 
 {
@@ -152,13 +152,13 @@ Content-Type: application/json
 }
 
 ### 에러 - body 완전히 비움 (refine 걸림)
-PATCH http://localhost:3000/products/1
+PATCH https://one3-sprint-mission-be-1.onrender.com/products/1
 Content-Type: application/json
 
 {}
 
 ### 에러 - 존재하지 않는 id (P2025)
-PATCH http://localhost:3000/products/99999
+PATCH https://one3-sprint-mission-be-1.onrender.com/products/99999
 Content-Type: application/json
 
 {
@@ -166,7 +166,7 @@ Content-Type: application/json
 }
 
 ### 에러 - price 잘못된 타입
-PATCH http://localhost:3000/products/1
+PATCH https://one3-sprint-mission-be-1.onrender.com/products/1
 Content-Type: application/json
 
 {
@@ -177,10 +177,10 @@ Content-Type: application/json
 ### ===== DELETE /:id =====
 
 ### 정상
-DELETE http://localhost:3000/products/63
+DELETE https://one3-sprint-mission-be-1.onrender.com/products/63
 
 ### 에러 - 존재하지 않는 id (P2025)
-DELETE http://localhost:3000/products/99999
+DELETE https://one3-sprint-mission-be-1.onrender.com/products/99999
 
 ### 에러 - 문자열 id
-DELETE http://localhost:3000/products/abc
+DELETE https://one3-sprint-mission-be-1.onrender.com/products/abc
