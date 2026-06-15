@@ -4,7 +4,7 @@ export const createArticleBodySchema = z.object({
   title: z
     .string("title은 필수입니다")
     .min(1, "title은 1자 이상이어야 합니다")
-    .max(10, "title은 10자 이하여야 합니다"),
+    .max(20, "title은 20자 이하여야 합니다"),
   content: z
     .string("content는 필수입니다")
     .min(10, "content는 10자 이상이어야 합니다")
