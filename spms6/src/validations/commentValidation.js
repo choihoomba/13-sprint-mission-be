@@ -3,7 +3,8 @@ import { z } from "zod";
 export const commentBodySchema = z.object({
   content: z
     .string("content는 필수입니다")
-    .min(1, "content는 1자 이상이어야 합니다"),
+    .min(1, "content는 1자 이상이어야 합니다")
+    .max(100, "content는 100자 이하여야 합니다"),
 });
 
 export const getCommentsQuerySchema = z
